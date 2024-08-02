@@ -1,7 +1,4 @@
 # ML-based-SQL-Injection-Detection
-Detected SQL injection prompt using ML based model. 
-
-# ML-based-SQL-Injection-Detection
 
 This project is a machine learning-based solution for detecting SQL injection attacks. SQL injection is a code injection technique that exploits vulnerabilities in web applications by inserting malicious SQL statements into application input fields. This can lead to unauthorized access, data manipulation, and even complete system compromise.
 
