@@ -24,36 +24,35 @@ The project consists of two main components:
 
 Install the required dependencies:
 
-cd ML-based-SQL-Injection-Detection
-pip install -r requirements.txt
+2. Clone the repository:
+
+   ```bash
+   cd ML-based-SQL-Injection-Detection
+   pip install -r requirements.txt
 
 
 
-Usage
-Start the FastAPI server:
-
-uvicorn API.main:app --reload
-
+## Usage
+1. Start the FastAPI server:
+    ```bash
+    uvicorn API.main:app --reload
 
 
 The server will be running at http://127.0.0.1:8000.
 
-Send a POST request to the /pred/ endpoint with the input string as the request body:
-
-curl -X POST -H "Content-Type: application/json" -d '{"input": "SELECT * FROM users WHERE id = 1 OR 1=1;"}' http://127.0.0.1:8000/pred/
+2. Send a POST request to the /pred/ endpoint with the input string as the request body:
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{"input": "SELECT * FROM users WHERE id = 1 OR 1=1;"}' http://127.0.0.1:8000/pred/
 
 The server will respond with a JSON object indicating whether the input string is a potential SQL injection attack or not.
 
 You can also use the sqlifree package to make predictions directly from your Python code:
+```bash
+    import sqlifree
+    
+    sql = sqlifree.prediction("[Input the SQL injection here]")
 
-import sqlifree
-
-sql = sqlifree.prediction("With that done, all we have to do next is run the following command in the same directory ")
-
-if sql:
-    print("It's SQL Injection!")
-else:
-    print("Safe SQL query")
-
-
-
+    if sql:
+        print("It's SQL Injection!")
+    else:
+        print("Safe SQL query")
